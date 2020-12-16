@@ -4,21 +4,21 @@ locals {
 }
 
 module "task_label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.21.0"
+  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.22.0"
   enabled    = local.enabled && length(var.task_role_arn) == 0
   context    = module.this.context
   attributes = ["task"]
 }
 
 module "service_label" {
-  source = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.21.0"
+  source = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.22.0"
 
   context    = module.this.context
   attributes = ["service"]
 }
 
 module "exec_label" {
-  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.21.0"
+  source     = "git::https://github.com/cloudposse/terraform-null-label.git?ref=tags/0.22.0"
   enabled    = local.enabled && length(var.task_exec_role_arn) == 0
   context    = module.this.context
   attributes = ["exec"]
